@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #fbfbfb;
+  --color-text-primary: #031121;
+  --color-text-muted: rgba(3, 17, 33, 0.33);
+  --color-card-bg: rgba(3, 17, 33, 0.05);
+  --color-card-bg-hover: rgba(3, 17, 33, 0.1);
+  --color-img-tint: transparent;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --img-blend: normal;
+    --grid-padding: 15px;
+    --grid-gutter: 15px;
+    --grid-columns: 2;
+    --grid-max-width: 100%;
+  }
+  @media (min-width: 768px) {
+    :root {
+      --grid-padding: 30px;
+      --grid-gutter: 20px;
+      --grid-columns: 6;
+    }
+  }
+  @media (min-width: 1024px) {
+    :root {
+      --grid-padding: 40px;
+      --grid-gutter: 20px;
+      --grid-columns: 12;
+      --grid-max-width: 1280px;
+      --grid-container: min(100vw, var(--grid-max-width));
+      --grid-col-width: calc(
+        (var(--grid-container) - 2 * var(--grid-padding) - 11 * var(--grid-gutter)) / 12
+      );
+      --nav-width: calc(
+        var(--grid-padding) + 2 * var(--grid-col-width) + var(--grid-gutter)
+      );
+      --nav-total-offset: calc(var(--nav-width) + var(--grid-gutter));
+    }
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+[data-theme="1"] {
+  --color-bg: #e1e4ab;
+  --color-text-primary: #555724;
+  --color-text-muted: rgba(85, 87, 36, 0.33);
+  --color-card-bg: rgba(85, 87, 36, 0.05);
+  --color-card-bg-hover: rgba(85, 87, 36, 0.1);
+  --color-img-tint: #555724;
+  --img-blend: luminosity;
+}
+
+[data-theme="2"] {
+  --color-bg: #dbe3e9;
+  --color-text-primary: #003360;
+  --color-text-muted: rgba(0, 51, 96, 0.33);
+  --color-card-bg: rgba(0, 51, 96, 0.05);
+  --color-card-bg-hover: rgba(0, 51, 96, 0.1);
+  --color-img-tint: #003360;
+  --img-blend: luminosity;
+}
+
+[data-theme="3"] {
+  --color-bg: #335236;
+  --color-text-primary: #a2e3a8;
+  --color-text-muted: rgba(162, 227, 168, 0.33);
+  --color-card-bg: rgba(162, 227, 168, 0.2);
+  --color-card-bg-hover: rgba(162, 227, 168, 0.3);
+  --color-img-tint: #a2e3a8;
+  --img-blend: luminosity;
+}
+
+[data-theme="4"] {
+  --color-bg: #191b18;
+  --color-text-primary: #c0c4c5;
+  --color-text-muted: #8e8e8e;
+  --color-card-bg: rgba(142, 142, 142, 0.2);
+  --color-card-bg-hover: rgba(142, 142, 142, 0.3);
+  --color-img-tint: #c0c4c5;
+  --img-blend: luminosity;
+}
+
+@layer utilities {
+  .grid-px {
+    padding-left: var(--grid-padding);
+    padding-right: var(--grid-padding);
+  }
+  .themed-img {
+    mix-blend-mode: var(--img-blend, normal);
+  }
+}
