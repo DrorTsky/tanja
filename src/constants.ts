@@ -163,7 +163,7 @@ export const MARKETLOG_USER_MARKET_INTRO =
   "As known humans are naturally visually scanning subjects vertically, thus, our horizontal reading patterns are something we learned as the written language become a thing.";
 
 export const MARKETLOG_USER_MARKET_BODY = [
-  "With that in mind, we can understand why it is difficult to us to keep concentration while reading horizontally wide texts. This fact can be supported by several known patterns and articles. The first example that comes to mind is the newspaper text columns, that usually divided to several columns per page to make the reading experience easier. In addition there is the known \"F & Z\" patterns of the eye movement, which we, designers, use to make the content more accessible for users.",
+  'With that in mind, we can understand why it is difficult to us to keep concentration while reading horizontally wide texts. This fact can be supported by several known patterns and articles. The first example that comes to mind is the newspaper text columns, that usually divided to several columns per page to make the reading experience easier. In addition there is the known "F & Z" patterns of the eye movement, which we, designers, use to make the content more accessible for users.',
   "But before the execution, to look on the competitors performance and understand their choices was important as well.",
   "The majority of our competitors are using tables with horizontal scrolling in their calendars. It's like this due to the fact that most of them were built years ago, when the mobile website adaptation was not that common. In addition most of our competitors are addressing more mature audience, that is used to accessing the platform through the desktop.",
   "We hope to expand our target audience, and for that we need to address the needs of the younger traders and investors, who are more adapted the the smartphone. Thus the decision to make the calendars layout vertical in the mobile device, avoiding unnecessary horizontal scrolling was crucial for the user experience.",
@@ -297,7 +297,7 @@ export const CONTACT_LINKS = [
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/tanya-sherbakov/",
   },
   {
     label: "Resume",
