@@ -1,8 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
-const TRANSITION_GUARD_MS = 800;
-
 export default function ScrollToTop() {
   const { pathname } = useLocation();
   const isFirstRender = useRef(true);

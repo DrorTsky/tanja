@@ -95,7 +95,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   }`}
                 >
                   {item.label}
-                  {item.hasChevron && (
+                  {("hasChevron" in item) && item.hasChevron && (
                     <svg
                       className="w-5 h-5 ml-0.5"
                       viewBox="0 0 20 20"
