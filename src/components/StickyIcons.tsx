@@ -7,7 +7,7 @@ const ICON_BUTTON_CLASS =
 
 const ICON_IMG_CLASS = "size-[23px] md:size-8";
 
-const GRID_COLUMN_COLOR = "rgba(255, 0, 0, 0.05)";
+const GRID_COLUMN_COLOR = "var(--color-grid-column)";
 const COLUMN_TRANSITION_DURATION_MS = 600;
 const COLUMN_STAGGER_DELAY_MS = 45;
 const MAX_COLUMNS = 12;

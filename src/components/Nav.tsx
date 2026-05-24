@@ -3,6 +3,7 @@ import { map } from "lodash-es";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { NAV_ITEMS, WORK_SUBMENU_ITEMS } from "../constants";
 import useActiveSection from "../hooks/useActiveSection";
+import useActiveProject from "../hooks/useActiveProject";
 
 const SCROLL_POLL_INTERVAL_MS = 50;
 const SCROLL_POLL_MAX_ATTEMPTS = 40;
@@ -12,6 +13,7 @@ export default function Nav() {
   const navigate = useNavigate();
   const isProjectPage = location.pathname.startsWith("/work/");
   const activeSection = useActiveSection();
+  const activeProject = useActiveProject(activeSection === "work");
   const pendingScrollRef = useRef<string | null>(null);
 
   useEffect(() => {
@@ -49,7 +51,7 @@ export default function Nav() {
         {map(NAV_ITEMS, (item) => {
           const sectionId = item.href.replace("#", "");
           const isActive = sectionId === activeSection;
-          const showSubmenu = item.label === "Work" && isProjectPage;
+          const showSubmenu = item.label === "Work" && (isProjectPage || activeSection === "work");
 
           const linkContent = (
             <span
@@ -80,9 +82,12 @@ export default function Nav() {
               )}
 
               {showSubmenu && (
-                <ul className="flex flex-col pt-2.5 pb-2.5">
+                <ul className="flex flex-col pt-2.5 pb-2.5 overflow-hidden transition-all duration-300">
                   {map(WORK_SUBMENU_ITEMS, (sub) => {
-                    const isSubActive = location.pathname === sub.href;
+                    const subSlug = sub.href.replace("/work/", "");
+                    const isSubActive = isProjectPage
+                      ? location.pathname === sub.href
+                      : activeProject === subSlug;
                     return (
                       <li key={sub.label}>
                         <Link

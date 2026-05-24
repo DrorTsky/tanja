@@ -11,6 +11,7 @@ import StickyIcons from "./components/StickyIcons";
 import MarketlogPage from "./components/MarketlogPage";
 import KillBillsPage from "./components/KillBillsPage";
 import IchiPage from "./components/IchiPage";
+import MyfxbookPage from "./components/MyfxbookPage";
 import ScrollToTop from "./components/ScrollToTop";
 
 function HomePage() {
@@ -28,6 +29,7 @@ function ProjectPageLayout() {
   return (
     <main className="flex flex-col items-end">
       <Routes>
+        <Route path="myfxbook" element={<MyfxbookPage />} />
         <Route path="marketlog" element={<MarketlogPage />} />
         <Route path="killbills" element={<KillBillsPage />} />
         <Route path="ichi" element={<IchiPage />} />

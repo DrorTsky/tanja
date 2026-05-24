@@ -63,6 +63,94 @@ export const WORK_SUBMENU_ITEMS = [
   { label: "Ichi", href: "/work/ichi" },
 ] as const;
 
+export const MYFXBOOK_TITLE = "Myfxbook";
+export const MYFXBOOK_SUBTITLE = "Product Design | 2025";
+
+export const MYFXBOOK_OVERVIEW_TEXT =
+  "During 2025, I led the end-to-end UX and UI design of MyFXBook's new proprietary trading firm ecosystem: a multi-layered product suite that enables traders to discover, compare, and evaluate prop firms with clarity and confidence. This involved building a central directory, an interactive comparison engine, and firm-specific profile pages, all fully integrated within an active financial platform.";
+
+export const MYFXBOOK_CHALLENGE_INTRO =
+  "The trading community lacked a dedicated, user-friendly space to evaluate prop firms.";
+
+export const MYFXBOOK_CHALLENGE_BODY =
+  "While interest in prop trading was surging, existing resources were either fragmented or confusing. Our goal was to create a centralized, intuitive, and scalable ecosystem that allowed users to:";
+
+export const MYFXBOOK_CHALLENGE_ITEMS = [
+  "Browse all available firms",
+  "Compare offerings side-by-side",
+  "Deep-dive into individual firm details",
+  "Read and leave verified reviews",
+];
+
+export const MYFXBOOK_ROLE_ITEMS = [
+  "Lead UX/UI Designer",
+  "End-to-end design ownership across three interconnected experiences",
+  "UX research, user flow mapping, wireframes, and visual design",
+  "Ongoing collaboration with product managers, developers, and QA",
+  "Ensured consistency with MyFXBook's platform while evolving the brand",
+];
+
+export const MYFXBOOK_DISCOVERY_ITEMS = [
+  "Mapped out common pain points from existing trader communities.",
+  "Analyzed industry competitors and financial data products.",
+  "Interviewed active users and synthesized their browsing behaviors.",
+];
+
+export const MYFXBOOK_IA_INTRO = "Created a three-tiered ecosystem structure:";
+
+export const MYFXBOOK_IA_TIERS = [
+  {
+    label: "Directory Landing Page:",
+    description:
+      "Clear overview of all prop firms, sortable by firm type, funding size, requirements, and more",
+    link: "\u2192 View live",
+  },
+  {
+    label: "Comparison Page:",
+    description:
+      "A feature-level breakdown tool that lets users line up firms and assess them on specific attributes",
+    link: "\u2192 View live",
+  },
+  {
+    label: "Challenges Page:",
+    description:
+      "A feature-level breakdown tool that lets users line up challenges across firms and assess them on specific attributes",
+    link: "\u2192 View live",
+  },
+  {
+    label: "Firm Profile Pages:",
+    description: "Each prop firm receives a dedicated page with:",
+    details: [
+      "Overview",
+      "Core details (funding, rules, costs)",
+      "Ratings and verified user reviews",
+    ],
+    link: "\u2192 Example live page",
+  },
+];
+
+export const MYFXBOOK_DESIGN_ITEMS = [
+  "Prioritized clarity, hierarchy, and actionability over heavy visuals.",
+  "Built responsive layouts that serve both power users and first-timers.",
+  "Designed modular cards and reusable components for scalability.",
+  "Validated design decisions through internal feedback and phased rollouts.",
+];
+
+export const MYFXBOOK_OUTCOME_ITEMS = [
+  "Launched in Q4 2023 across web platform.",
+  "Received strong user feedback and organic adoption without a heavy marketing push.",
+  "Created a new potential revenue stream via firm visibility & partnerships.",
+  "Set the foundation for future add-ons, including watchlists, alerts, and onboarding flows.",
+];
+
+export const MYFXBOOK_REFLECTION_TEXT =
+  "This project challenged me to balance dense financial data with real-world usability. Designing for clarity in a data-saturated field taught me how vital information hierarchy, user trust, and scalable logic are. I also learned that true user-centered design often means fighting for simplicity\u2014even when the subject matter is complex.";
+
+export const MYFXBOOK_NEXT_PROJECT = {
+  label: "Marketlog",
+  href: "/work/marketlog",
+} as const;
+
 export const MARKETLOG_PRODUCT_TEXT =
   "Marketlog is an adaptive website, offering an online community & providing the user with tools to track, compare and analyze their trading activity. My role in this project is to adapt the experience from the desktop to the mobile. In this case study I will focus on the mobile adaptation for the Calendars feature.";
 

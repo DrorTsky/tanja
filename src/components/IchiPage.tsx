@@ -24,42 +24,84 @@ import {
   ICHI_NEXT_STEPS,
   ICHI_NEXT_PROJECT,
 } from "../constants";
-import ichiHero from "../assets/ichi-hero.png";
-import ichiPersona from "../assets/ichi-persona.png";
-import ichiMeetUser from "../assets/ichi-meet-user.png";
-import ichiJourney from "../assets/ichi-journey.png";
-import ichiPaperWireframes from "../assets/ichi-paper-wireframes.png";
-import ichiDigitalWireframe1 from "../assets/ichi-digital-wireframe-1.png";
-import ichiDigitalWireframe2 from "../assets/ichi-digital-wireframe-2.png";
-import ichiLofiPrototype from "../assets/ichi-lofi-prototype.png";
-import ichiMockups from "../assets/ichi-mockups.png";
-import ichiMockups2 from "../assets/ichi-mockups-2.png";
-import ichiShowcase from "../assets/ichi-showcase.png";
-import ichiHifiPrototype from "../assets/ichi-hifi-prototype.png";
-import ichiAccessibility from "../assets/ichi-accessibility.png";
 
-const HEADING = "font-medium text-[24px] lg:text-[36px] leading-normal tracking-[-1.974px] text-text-primary";
+import dIchi1 from "../assets/portfolio/ichi/d-ichi-1.png";
+import dIchi2 from "../assets/portfolio/ichi/d-ichi-2.png";
+import dIchi3 from "../assets/portfolio/ichi/d-ichi-3.png";
+import dIchi4 from "../assets/portfolio/ichi/d-ichi-4.png";
+import dIchi5 from "../assets/portfolio/ichi/d-ichi-5.png";
+import dIchi6 from "../assets/portfolio/ichi/d-ichi-6.png";
+import dIchi7 from "../assets/portfolio/ichi/d-ichi-7.png";
+import dIchi8 from "../assets/portfolio/ichi/d-ichi-8.png";
+import dIchi9 from "../assets/portfolio/ichi/d-ichi-9.png";
+import dIchi10 from "../assets/portfolio/ichi/d-ichi-10.png";
+import dIchi11 from "../assets/portfolio/ichi/d-ichi-11.png";
+import dIchi12 from "../assets/portfolio/ichi/d-ichi-12.png";
+import tIchi1 from "../assets/portfolio/ichi/t-ichi-1.png";
+import tIchi2 from "../assets/portfolio/ichi/t-ichi-2.png";
+import tIchi3 from "../assets/portfolio/ichi/t-ichi-3.png";
+import tIchi4 from "../assets/portfolio/ichi/t-ichi-4.png";
+import tIchi5 from "../assets/portfolio/ichi/t-ichi-5.png";
+import tIchi6 from "../assets/portfolio/ichi/t-ichi-6.png";
+import tIchi7 from "../assets/portfolio/ichi/t-ichi-7.png";
+import tIchi8 from "../assets/portfolio/ichi/t-ichi-8.png";
+import tIchi9 from "../assets/portfolio/ichi/t-ichi-9.png";
+import tIchi10 from "../assets/portfolio/ichi/t-ichi-10.png";
+import tIchi11 from "../assets/portfolio/ichi/t-ichi-11.png";
+import tIchi12 from "../assets/portfolio/ichi/t-ichi-12.png";
+import mIchi1 from "../assets/portfolio/ichi/m-ichi-1.png";
+import mIchi2 from "../assets/portfolio/ichi/m-ichi-2.png";
+import mIchi3 from "../assets/portfolio/ichi/m-ichi-3.png";
+import mIchi4 from "../assets/portfolio/ichi/m-ichi-4.png";
+import mIchi5 from "../assets/portfolio/ichi/m-ichi-5.png";
+import mIchi6 from "../assets/portfolio/ichi/m-ichi-6.png";
+import mIchi7 from "../assets/portfolio/ichi/m-ichi-7.png";
+import mIchi8 from "../assets/portfolio/ichi/m-ichi-8.png";
+import mIchi9 from "../assets/portfolio/ichi/m-ichi-9.png";
+import mIchi10 from "../assets/portfolio/ichi/m-ichi-10.png";
+import mIchi11 from "../assets/portfolio/ichi/m-ichi-11.png";
+import mIchi12 from "../assets/portfolio/ichi/m-ichi-12.png";
+
+const HEADING = "font-medium text-[24px] md:text-[36px] leading-normal tracking-[-1.974px] text-text-primary";
 const BODY = "font-normal text-[15px] leading-normal text-text-primary";
 const TITLE = "Ichi";
 const SUBTITLE = "Product Design | May - June 2021";
 
+interface ResponsiveImageProps {
+  desktop: string;
+  tablet: string;
+  mobile: string;
+  alt: string;
+  className?: string;
+}
+
+function ResponsiveImage({ desktop, tablet, mobile, alt, className = "" }: ResponsiveImageProps) {
+  return (
+    <picture>
+      <source media="(min-width: 1024px)" srcSet={desktop} />
+      <source media="(min-width: 768px)" srcSet={tablet} />
+      <img src={mobile} alt={alt} className={`w-full h-auto ${className}`} />
+    </picture>
+  );
+}
+
 export default function IchiPage() {
   return (
-    <div className="flex flex-col w-full max-w-[997px] px-[var(--grid-padding)] lg:px-0 lg:pr-[var(--grid-padding)]">
+    <div className="flex flex-col w-full max-w-[997px] lg:max-w-none px-[var(--grid-padding)] lg:px-0 lg:pr-[var(--grid-padding)]">
       {/* Title */}
-      <div className="flex flex-col pt-[50px] lg:py-[50px] lg:gap-[10px] text-text-primary">
-        <h1 className="font-medium text-[32px] lg:text-[64px] leading-normal lg:leading-[68px] tracking-[-1.974px]">
+      <div className="flex flex-col gap-0 md:gap-[10px] pt-[50px] lg:py-[50px] text-text-primary">
+        <h1 className="font-medium text-[32px] md:text-[64px] leading-normal md:leading-[68px] tracking-[-1.974px]">
           {TITLE}
         </h1>
-        <p className="text-[15px] font-normal leading-[20px]">
+        <p className="text-[12px] md:text-[15px] font-normal leading-[20px]">
           {SUBTITLE}
         </p>
       </div>
 
-      <div className="flex flex-col gap-[50px] lg:gap-[100px]">
+      <div className="flex flex-col gap-[50px] md:gap-[100px]">
         {/* Product/Problem/Goal/Responsibilities + Hero image */}
-        <div className="flex flex-col lg:flex-row lg:gap-[var(--grid-gutter)] w-full">
-          <div className="flex flex-col gap-5 w-full lg:w-[489px] lg:shrink-0 text-text-primary">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--grid-gutter)] w-full">
+          <div className="flex flex-col gap-5 text-text-primary">
             <h2 className={HEADING}>The product</h2>
             <p className={BODY}>{ICHI_PRODUCT_TEXT}</p>
             <h2 className={HEADING}>The problem</h2>
@@ -69,48 +111,39 @@ export default function IchiPage() {
             <h2 className={HEADING}>My responsibilities</h2>
             <p className={BODY}>{ICHI_RESPONSIBILITIES_TEXT}</p>
           </div>
-          <div className="flex justify-center w-full lg:w-[488px] lg:shrink-0 mt-[50px] lg:mt-0">
-            <div className="w-full aspect-[375/381] lg:w-[488px] lg:aspect-auto lg:h-[676px] relative overflow-hidden">
-              <img
-                src={ichiHero}
-                alt="Ichi sushi app"
-                className="themed-img absolute h-[118.79%] left-0 top-[-18.79%] w-full max-w-none"
-              />
-            </div>
+          <div className="flex justify-center">
+            <ResponsiveImage
+              desktop={dIchi1} tablet={tIchi1} mobile={mIchi1}
+              alt="Ichi sushi app" className="themed-img"
+            />
           </div>
         </div>
 
-        {/* Understanding the user + Persona */}
-        <div className="flex flex-col gap-[60px] lg:flex-row lg:items-center lg:justify-between w-full lg:gap-[var(--grid-gutter)]">
-          <div className="flex flex-col gap-5 w-full lg:w-[488px] lg:shrink-0 text-text-primary">
+        {/* Understanding the user + Persona (text left, image right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--grid-gutter)] items-center w-full">
+          <div className="flex flex-col gap-5 text-text-primary">
             <h2 className={HEADING}>Understanding the user</h2>
             {map(ICHI_UNDERSTANDING_USER_TEXT, (p, i) => (
               <p key={i} className={BODY}>{p}</p>
             ))}
           </div>
-          <div className="flex justify-center w-full lg:w-[489px] lg:shrink-0">
-            <div className="w-full aspect-[421/188] lg:w-[421px] lg:h-[188px] lg:aspect-auto relative overflow-hidden">
-              <img
-                src={ichiPersona}
-                alt="User persona"
-                className="themed-img absolute h-[102.75%] left-[-20.61%] top-0 w-[141.21%] max-w-none"
-              />
-            </div>
+          <div className="w-full">
+            <ResponsiveImage
+              desktop={dIchi2} tablet={tIchi2} mobile={mIchi2}
+              alt="User persona" className="themed-img"
+            />
           </div>
         </div>
 
-        {/* Meet the user (image first on both mobile & desktop) */}
-        <div className="flex flex-col gap-[60px] lg:flex-row lg:items-start lg:justify-between w-full lg:gap-[var(--grid-gutter)]">
-          <div className="flex justify-center w-full lg:w-[489px] lg:shrink-0">
-            <div className="w-full aspect-[489/288] lg:w-[489px] lg:h-[288px] lg:aspect-auto relative">
-              <img
-                src={ichiMeetUser}
-                alt="Meet Adam"
-                className="themed-img absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
+        {/* Meet the user (image left, text right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--grid-gutter)] items-start w-full">
+          <div className="w-full">
+            <ResponsiveImage
+              desktop={dIchi3} tablet={tIchi3} mobile={mIchi3}
+              alt="Meet Adam" className="themed-img"
+            />
           </div>
-          <div className="flex flex-col gap-5 w-full lg:w-[488px] lg:shrink-0 text-text-primary">
+          <div className="flex flex-col gap-5 text-text-primary">
             <h2 className={HEADING}>Meet the user</h2>
             <p className={BODY}>{ICHI_MEET_USER_TEXT}</p>
             <h2 className={HEADING}>Problem statement</h2>
@@ -121,56 +154,44 @@ export default function IchiPage() {
         </div>
 
         {/* Journey map full-width */}
-        <div className="w-full aspect-[997/511] relative">
-          <img
-            src={ichiJourney}
-            alt="User journey map"
-            className="themed-img absolute inset-0 w-full h-full object-cover"
+        <div className="w-full">
+          <ResponsiveImage
+            desktop={dIchi4} tablet={tIchi4} mobile={mIchi4}
+            alt="User journey map" className="themed-img"
           />
         </div>
 
-        {/* Paper wireframes + Image */}
-        <div className="flex flex-col gap-[60px] lg:flex-row lg:items-center lg:justify-between w-full lg:gap-[var(--grid-gutter)]">
-          <div className="flex flex-col gap-5 w-full lg:w-[488px] lg:shrink-0 text-text-primary">
+        {/* Paper wireframes (text left, image right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--grid-gutter)] items-center w-full">
+          <div className="flex flex-col gap-5 text-text-primary">
             <h2 className={HEADING}>Starting the design with paper wireframes</h2>
             <p className={BODY}>{ICHI_PAPER_WIREFRAMES_TEXT}</p>
           </div>
-          <div className="flex justify-center w-full lg:w-[489px] lg:shrink-0">
-            <div className="w-full aspect-[489/323] lg:w-[489px] lg:h-[323px] lg:aspect-auto relative">
-              <img
-                src={ichiPaperWireframes}
-                alt="Paper wireframes"
-                className="themed-img absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
+          <div className="w-full">
+            <ResponsiveImage
+              desktop={dIchi5} tablet={tIchi5} mobile={mIchi5}
+              alt="Paper wireframes" className="themed-img"
+            />
           </div>
         </div>
 
-        {/* Digital wireframes (image first on both mobile & desktop) */}
-        <div className="flex flex-col gap-[60px] lg:flex-row lg:items-center lg:justify-between w-full lg:gap-[var(--grid-gutter)]">
-          <div className="flex justify-center w-full lg:w-[489px] lg:shrink-0">
-            <div className="flex relative w-full lg:w-[489px] h-[186px] lg:h-[263px]">
-              <img
-                src={ichiDigitalWireframe1}
-                alt="Digital wireframe 1"
-                className="themed-img w-[58.49%] lg:w-[286px] h-[186px] lg:h-[263px] object-cover relative z-10"
-              />
-              <img
-                src={ichiDigitalWireframe2}
-                alt="Digital wireframe 2"
-                className="themed-img w-[53.61%] lg:w-[285px] h-[185px] lg:h-[262px] object-cover relative ml-[-12.1%] lg:ml-[-60px] mt-[36px] lg:mt-[50px]"
-              />
-            </div>
+        {/* Digital wireframes (image left, text right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--grid-gutter)] items-center w-full">
+          <div className="w-full">
+            <ResponsiveImage
+              desktop={dIchi6} tablet={tIchi6} mobile={mIchi6}
+              alt="Digital wireframes" className="themed-img"
+            />
           </div>
-          <div className="flex flex-col gap-5 w-full lg:w-[488px] lg:shrink-0 text-text-primary">
+          <div className="flex flex-col gap-5 text-text-primary">
             <h2 className={HEADING}>Digital wireframes</h2>
             <p className={BODY}>{ICHI_DIGITAL_WIREFRAMES_TEXT}</p>
           </div>
         </div>
 
-        {/* Low-fidelity prototype + Image */}
-        <div className="flex flex-col gap-[60px] lg:flex-row lg:items-center lg:justify-between w-full lg:gap-[var(--grid-gutter)]">
-          <div className="flex flex-col gap-5 w-full lg:w-[488px] lg:shrink-0 text-text-primary">
+        {/* Low-fidelity prototype (text left, image right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--grid-gutter)] items-center w-full">
+          <div className="flex flex-col gap-5 text-text-primary">
             <h2 className={HEADING}>Low-fidelity prototype</h2>
             <p className={BODY}>{ICHI_LOFI_PROTOTYPE_TEXT}</p>
             <a
@@ -182,20 +203,17 @@ export default function IchiPage() {
               Low fidelity prototype
             </a>
           </div>
-          <div className="flex justify-center w-full lg:w-[489px] lg:shrink-0">
-            <div className="w-full aspect-[489/230] lg:w-[489px] lg:h-[230px] lg:aspect-auto relative">
-              <img
-                src={ichiLofiPrototype}
-                alt="Low-fidelity prototype"
-                className="themed-img absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
+          <div className="w-full">
+            <ResponsiveImage
+              desktop={dIchi7} tablet={tIchi7} mobile={mIchi7}
+              alt="Low-fidelity prototype" className="themed-img"
+            />
           </div>
         </div>
 
-        {/* Usability study: findings (stacked on mobile, side-by-side on desktop) */}
-        <div className="flex flex-col gap-[60px] lg:flex-row lg:items-start lg:justify-between w-full lg:gap-[var(--grid-gutter)] text-text-primary">
-          <div className="flex flex-col gap-5 w-full lg:w-[488px] lg:shrink-0">
+        {/* Usability study: findings (two columns on desktop, stacked otherwise) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--grid-gutter)] items-start w-full text-text-primary">
+          <div className="flex flex-col gap-5">
             <h2 className={HEADING}>Usability study: findings</h2>
             <div className={BODY}>
               <p className="mb-3">Round 1 findings</p>
@@ -204,7 +222,7 @@ export default function IchiPage() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-5 w-full lg:w-[488px] lg:shrink-0">
+          <div className="flex flex-col gap-5">
             <h2 className={`${HEADING} hidden lg:block lg:opacity-0`}>Usability study: findings</h2>
             <div className={BODY}>
               <p className="mb-3">Round 2 findings</p>
@@ -215,53 +233,44 @@ export default function IchiPage() {
           </div>
         </div>
 
-        {/* Mockups + Image */}
-        <div className="flex flex-col gap-[60px] lg:flex-row lg:items-center lg:justify-between w-full lg:gap-[var(--grid-gutter)]">
-          <div className="flex flex-col gap-5 w-full lg:w-[488px] lg:shrink-0 text-text-primary">
+        {/* Mockups (text left, image right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--grid-gutter)] items-center w-full">
+          <div className="flex flex-col gap-5 text-text-primary">
             <h2 className={HEADING}>Mockups</h2>
             <p className={BODY}>{ICHI_MOCKUPS_TEXT}</p>
           </div>
-          <div className="flex justify-center w-full lg:w-[489px] lg:shrink-0 overflow-hidden">
-            <div className="w-full aspect-[743/695] lg:w-[743px] lg:h-[695px] lg:aspect-auto relative">
-              <img
-                src={ichiMockups}
-                alt="Mockups before and after"
-                className="themed-img absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Cart icon: image first, text second (both mobile & desktop) */}
-        <div className="flex flex-col gap-[60px] lg:flex-row lg:items-center lg:justify-between w-full lg:gap-[var(--grid-gutter)]">
-          <div className="flex justify-center w-full lg:w-[489px] lg:shrink-0 overflow-hidden">
-            <div className="w-full aspect-[742/683] lg:w-[742px] lg:h-[683px] lg:aspect-auto relative">
-              <img
-                src={ichiMockups2}
-                alt="Cart icon before and after"
-                className="themed-img absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col gap-5 w-full lg:w-[488px] lg:shrink-0 text-text-primary">
-            <p className={BODY}>{ICHI_MOCKUPS_CART_TEXT}</p>
-          </div>
-        </div>
-
-        {/* Showcase image */}
-        <div className="flex justify-center lg:justify-start w-full">
-          <div className="w-[345px] md:w-full h-[258px] md:h-auto md:aspect-[997/748] lg:w-full lg:h-auto lg:aspect-[997/748] relative overflow-hidden">
-            <img
-              src={ichiShowcase}
-              alt="Ichi app showcase"
-              className="themed-img absolute inset-0 w-full h-full object-cover"
+          <div className="w-full">
+            <ResponsiveImage
+              desktop={dIchi8} tablet={tIchi8} mobile={mIchi8}
+              alt="Mockups before and after" className="themed-img"
             />
           </div>
         </div>
 
-        {/* High-fidelity prototype + Image */}
-        <div className="flex flex-col gap-[60px] lg:flex-row lg:items-center lg:justify-between w-full lg:gap-[var(--grid-gutter)]">
-          <div className="flex flex-col gap-5 w-full lg:w-[488px] lg:shrink-0 text-text-primary">
+        {/* Cart icon mockup (image left, text right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--grid-gutter)] items-center w-full">
+          <div className="w-full">
+            <ResponsiveImage
+              desktop={dIchi9} tablet={tIchi9} mobile={mIchi9}
+              alt="Cart icon before and after" className="themed-img"
+            />
+          </div>
+          <div className="flex flex-col gap-5 text-text-primary">
+            <p className={BODY}>{ICHI_MOCKUPS_CART_TEXT}</p>
+          </div>
+        </div>
+
+        {/* Showcase full-width */}
+        <div className="w-full">
+          <ResponsiveImage
+            desktop={dIchi10} tablet={tIchi10} mobile={mIchi10}
+            alt="Ichi app showcase" className="themed-img"
+          />
+        </div>
+
+        {/* High-fidelity prototype (text left, image right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--grid-gutter)] items-center w-full">
+          <div className="flex flex-col gap-5 text-text-primary">
             <h2 className={HEADING}>High-fidelity prototype</h2>
             <p className={BODY}>{ICHI_HIFI_PROTOTYPE_TEXT}</p>
             <a
@@ -273,32 +282,26 @@ export default function IchiPage() {
               High fidelity prototype
             </a>
           </div>
-          <div className="flex justify-center w-full lg:w-[489px] lg:shrink-0">
-            <div className="w-full aspect-[489/385] lg:w-[489px] lg:h-[385px] lg:aspect-auto relative">
-              <img
-                src={ichiHifiPrototype}
-                alt="High-fidelity prototype"
-                className="themed-img absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
+          <div className="w-full">
+            <ResponsiveImage
+              desktop={dIchi11} tablet={tIchi11} mobile={mIchi11}
+              alt="High-fidelity prototype" className="themed-img"
+            />
           </div>
         </div>
 
         {/* Accessibility considerations */}
         <div className="flex flex-col gap-[60px] w-full">
           <h2 className={HEADING}>Accessibility considerations</h2>
-          <div className="w-full aspect-[997/346] relative">
-            <img
-              src={ichiAccessibility}
-              alt="Accessibility considerations"
-              className="themed-img absolute inset-0 w-full h-full object-cover"
-            />
-          </div>
+          <ResponsiveImage
+            desktop={dIchi12} tablet={tIchi12} mobile={mIchi12}
+            alt="Accessibility considerations" className="themed-img"
+          />
         </div>
 
         {/* Impact / What I learned / Next steps */}
-        <div className="flex flex-col lg:flex-row lg:justify-between w-full">
-          <div className="flex flex-col gap-5 w-full lg:w-[488px] lg:shrink-0 text-text-primary">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--grid-gutter)] w-full">
+          <div className="flex flex-col gap-5 text-text-primary">
             <h2 className={HEADING}>Impact</h2>
             <p className={BODY}>{ICHI_IMPACT_TEXT}</p>
             <h2 className={HEADING}>What I learned</h2>
@@ -314,13 +317,13 @@ export default function IchiPage() {
       </div>
 
       {/* Divider + Next Project */}
-      <div className="flex flex-col gap-[35px] items-end pb-[50px] lg:pb-0 lg:items-start pt-[50px] lg:pt-[100px]">
+      <div className="flex flex-col gap-[35px] items-end pb-[50px] lg:pb-0 pt-[50px] md:pt-[100px]">
         <hr className="w-full border-t border-text-muted/30" />
         <ScrollDownLink
           to={ICHI_NEXT_PROJECT.href}
           className="flex items-center group"
         >
-          <span className="font-medium text-[36px] leading-normal tracking-[-1.97px] text-text-primary group-hover:opacity-70 transition-opacity">
+          <span className="font-medium text-[24px] md:text-[36px] leading-normal tracking-[-1.97px] text-text-primary group-hover:opacity-70 transition-opacity">
             {ICHI_NEXT_PROJECT.label}
           </span>
           <svg

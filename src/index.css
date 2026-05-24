@@ -7,6 +7,7 @@
   --color-card-bg: rgba(3, 17, 33, 0.05);
   --color-card-bg-hover: rgba(3, 17, 33, 0.1);
   --color-img-tint: transparent;
+  --color-grid-column: rgba(255, 0, 0, 0.05);
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
@@ -58,6 +59,7 @@
   --color-card-bg: rgba(85, 87, 36, 0.05);
   --color-card-bg-hover: rgba(85, 87, 36, 0.1);
   --color-img-tint: #555724;
+  --color-grid-column: rgba(57, 92, 1, 0.05);
   --img-blend: luminosity;
 }
 
@@ -68,6 +70,7 @@
   --color-card-bg: rgba(0, 51, 96, 0.05);
   --color-card-bg-hover: rgba(0, 51, 96, 0.1);
   --color-img-tint: #003360;
+  --color-grid-column: rgba(0, 39, 178, 0.05);
   --img-blend: luminosity;
 }
 
@@ -78,6 +81,7 @@
   --color-card-bg: rgba(162, 227, 168, 0.2);
   --color-card-bg-hover: rgba(162, 227, 168, 0.3);
   --color-img-tint: #a2e3a8;
+  --color-grid-column: rgba(84, 218, 35, 0.05);
   --img-blend: luminosity;
 }
 
@@ -88,6 +92,7 @@
   --color-card-bg: rgba(142, 142, 142, 0.2);
   --color-card-bg-hover: rgba(142, 142, 142, 0.3);
   --color-img-tint: #c0c4c5;
+  --color-grid-column: rgba(192, 192, 192, 0.05);
   --img-blend: luminosity;
 }
 

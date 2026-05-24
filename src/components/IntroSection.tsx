@@ -8,9 +8,9 @@ export default function IntroSection() {
         <br className="hidden lg:inline" />
         and a practical approach,
         <br className="hidden lg:inline" />
-        {" I create simple, elegant solutions "}
+        {" I create simple, elegant"}
         <br className="hidden lg:inline" />
-        to complex human problems.
+        {" solutions to complex human problems."}
       </h1>
     </section>
   );

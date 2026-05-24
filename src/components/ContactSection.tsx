@@ -1,6 +1,8 @@
 import { map } from "lodash-es";
 import { STATUS_TEXT, CONTACT_LINKS } from "../constants";
-import artwork from "../assets/artwork.png";
+import dHpContact from "../assets/portfolio/homepage/d-hp-contact.png";
+import tHpContact from "../assets/portfolio/homepage/t-hp-contact.png";
+import mHpContact from "../assets/portfolio/homepage/m-hp-contact.png";
 
 export default function ContactSection() {
   return (
@@ -34,11 +36,15 @@ export default function ContactSection() {
         </div>
 
         <div className="w-full max-w-[345px] aspect-square md:flex-1 md:w-0 md:max-w-none md:h-auto overflow-hidden bg-img-tint">
-          <img
-            src={artwork}
-            alt="Artwork by Tanya"
-            className="w-full h-full object-cover themed-img"
-          />
+          <picture>
+            <source media="(min-width: 1024px)" srcSet={dHpContact} />
+            <source media="(min-width: 768px)" srcSet={tHpContact} />
+            <img
+              src={mHpContact}
+              alt="Artwork by Tanya"
+              className="w-full h-full object-cover themed-img"
+            />
+          </picture>
         </div>
       </div>
     </section>

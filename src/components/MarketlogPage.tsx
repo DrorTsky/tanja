@@ -8,17 +8,22 @@ import {
   MARKETLOG_CLICK_HERE_URL,
   MARKETLOG_NEXT_PROJECT,
 } from "../constants";
-import marketlogPhone from "../assets/marketlog-phone.png";
-import marketlogResult1 from "../assets/marketlog-result-1.png";
-import marketlogResult2 from "../assets/marketlog-result-2.png";
-import marketlogResult3 from "../assets/marketlog-result-3.png";
-import marketlogResult4 from "../assets/marketlog-result-4.png";
+
+import dMarketlog1 from "../assets/portfolio/Marketlog/d-marketlog-1.png";
+import dMarketlog2 from "../assets/portfolio/Marketlog/d-marketlog-2.png";
+import dMarketlog3 from "../assets/portfolio/Marketlog/d-marketlog-3.png";
+import tMarketlog1 from "../assets/portfolio/Marketlog/t-marketlog-1.png";
+import tMarketlog2 from "../assets/portfolio/Marketlog/t-marketlog-2.png";
+import tMarketlog3 from "../assets/portfolio/Marketlog/t-marketlog-3.png";
+import mMarketlog1 from "../assets/portfolio/Marketlog/m-marketlog-1.png";
+import mMarketlog2 from "../assets/portfolio/Marketlog/m-marketlog-2.png";
+import mMarketlog3 from "../assets/portfolio/Marketlog/m-marketlog-3.png";
 
 const SECTION_HEADING_CLASS =
-  "font-medium text-[24px] lg:text-[36px] leading-normal tracking-[-1.97px] text-text-primary";
+  "font-medium text-[24px] md:text-[36px] leading-normal tracking-[-1.97px] text-text-primary";
 const BODY_TEXT_CLASS =
   "font-normal text-[15px] leading-[20px] text-text-primary";
-const RESULT_HEADING = "THE RESULT";
+const RESULT_HEADING = "The result";
 const TITLE = "Marketlog";
 const SUBTITLE = "Product Design | January 2022 - Today";
 const PRODUCT_HEADING = "The product";
@@ -27,23 +32,40 @@ const USER_MARKET_HEADING = "Understanding the user & the market";
 const CLICK_HERE_LABEL = "Click here";
 const CLICK_HERE_SUFFIX = " for more about the human eye pattern.";
 
+interface ResponsiveImageProps {
+  desktop: string;
+  tablet: string;
+  mobile: string;
+  alt: string;
+  className?: string;
+}
+
+function ResponsiveImage({ desktop, tablet, mobile, alt, className = "" }: ResponsiveImageProps) {
+  return (
+    <picture>
+      <source media="(min-width: 1024px)" srcSet={desktop} />
+      <source media="(min-width: 768px)" srcSet={tablet} />
+      <img src={mobile} alt={alt} className={`w-full h-auto ${className}`} />
+    </picture>
+  );
+}
+
 export default function MarketlogPage() {
   return (
-    <div className="flex flex-col w-full max-w-[997px] px-[var(--grid-padding)] lg:px-0 lg:pr-[var(--grid-padding)]">
+    <div className="flex flex-col w-full max-w-[997px] lg:max-w-none px-[var(--grid-padding)] lg:px-0 lg:pr-[var(--grid-padding)]">
       {/* Title */}
-      <div className="flex flex-col py-[50px] text-text-primary">
-        <h1 className="font-medium text-[32px] lg:text-[64px] leading-normal lg:leading-[68px] tracking-[-1.974px]">
+      <div className="flex flex-col gap-0 md:gap-[10px] py-[50px] text-text-primary">
+        <h1 className="font-medium text-[32px] md:text-[64px] leading-normal md:leading-[68px] tracking-[-1.974px]">
           {TITLE}
         </h1>
-        <p className="text-[12px] lg:text-[15px] font-normal leading-[20px]">
+        <p className="text-[12px] md:text-[15px] font-normal leading-[20px]">
           {SUBTITLE}
         </p>
       </div>
 
-      {/* Content: text columns + phone mockup + body text */}
-      <div className="flex flex-col gap-[50px]">
-        {/* On desktop: 2-column grid. On mobile: single column */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--grid-gutter)]">
+      {/* Content: text + phone mockup + body text */}
+      <div className="flex flex-col gap-[50px] md:gap-[100px]">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-[var(--grid-gutter)]">
           {/* Text sections */}
           <div className="flex flex-col gap-5 text-text-primary">
             <h2 className={SECTION_HEADING_CLASS}>{PRODUCT_HEADING}</h2>
@@ -56,19 +78,19 @@ export default function MarketlogPage() {
             </p>
           </div>
 
-          {/* Phone mockup - desktop: right column, mobile: stacked below */}
-          <div className="flex justify-center">
-            <div className="w-[150px] h-[307px] md:w-[220px] md:h-[449px] lg:w-[287px] lg:h-[586px] relative overflow-hidden">
-              <img
-                src={marketlogPhone}
-                alt="Marketlog mobile calendar view"
-                className="themed-img absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
+          {/* Phone mockup */}
+          <div className="flex justify-center md:shrink-0">
+            <ResponsiveImage
+              desktop={dMarketlog1}
+              tablet={tMarketlog1}
+              mobile={mMarketlog1}
+              alt="Marketlog mobile calendar view"
+              className="themed-img w-auto max-h-[307px] md:max-h-[454px] lg:max-h-[586px]"
+            />
           </div>
 
           {/* Full-width body text */}
-          <div className="lg:col-span-2 text-text-primary text-[15px] font-normal leading-normal space-y-5">
+          <div className="md:col-span-2 text-text-primary text-[15px] font-normal leading-normal space-y-5">
             {map(MARKETLOG_USER_MARKET_BODY, (paragraph, index) => (
               <p key={index}>
                 {index === 0 ? (
@@ -95,74 +117,34 @@ export default function MarketlogPage() {
       </div>
 
       {/* THE RESULT */}
-      <div className="flex flex-col gap-[60px] pt-[50px] lg:pt-[100px]">
-        <h2 className="font-medium text-[34px] leading-normal tracking-[-1.974px] text-text-primary">
+      <div className="flex flex-col gap-[60px] pt-[50px] md:pt-[100px]">
+        <h2 className="font-medium text-[24px] md:text-[34px] leading-normal tracking-[-1.974px] text-text-primary">
           {RESULT_HEADING}
         </h2>
 
-        {/* Desktop: horizontal layout */}
-        <div className="hidden lg:flex gap-[var(--grid-gutter)] items-center justify-center">
-          <div className="w-[285px] shrink-0">
-            <img
-              src={marketlogResult1}
-              alt="Marketlog calendar result - earnings"
-              className="themed-img w-full h-auto object-cover"
-            />
-          </div>
-          <div className="flex-1 flex flex-col justify-between gap-[62px]">
-            <img
-              src={marketlogResult2}
-              alt="Marketlog desktop view"
-              className="themed-img w-full h-[234px] object-cover"
-            />
-            <img
-              src={marketlogResult3}
-              alt="Marketlog desktop view - events"
-              className="themed-img w-full h-[234px] object-cover"
-            />
-          </div>
-          <div className="w-[285px] shrink-0">
-            <img
-              src={marketlogResult4}
-              alt="Marketlog calendar result - economic"
-              className="themed-img w-full h-auto object-cover"
-            />
-          </div>
-        </div>
+        <ResponsiveImage
+          desktop={dMarketlog2}
+          tablet={tMarketlog2}
+          mobile={mMarketlog2}
+          alt="Marketlog economic calendar - desktop and mobile"
+        />
 
-        {/* Mobile/Tablet: vertical stacked layout */}
-        <div className="flex lg:hidden flex-col gap-5 items-center">
-          <img
-            src={marketlogResult1}
-            alt="Marketlog calendar result - earnings"
-            className="themed-img w-[150px] h-[276px] md:w-[200px] md:h-[368px] object-cover"
-          />
-          <img
-            src={marketlogResult2}
-            alt="Marketlog desktop view"
-            className="themed-img w-[337px] h-[204px] md:w-full md:h-auto object-cover"
-          />
-          <img
-            src={marketlogResult3}
-            alt="Marketlog desktop view - events"
-            className="themed-img w-[337px] h-[204px] md:w-full md:h-auto object-cover"
-          />
-          <img
-            src={marketlogResult4}
-            alt="Marketlog calendar result - economic"
-            className="themed-img w-[150px] h-[279px] md:w-[200px] md:h-[372px] object-cover"
-          />
-        </div>
+        <ResponsiveImage
+          desktop={dMarketlog3}
+          tablet={tMarketlog3}
+          mobile={mMarketlog3}
+          alt="Marketlog earnings calendar - desktop and mobile"
+        />
       </div>
 
       {/* Divider + Next Project */}
-      <div className="flex flex-col gap-[35px] pb-[50px] lg:pb-0 pt-[50px] lg:pt-[100px]">
+      <div className="flex flex-col gap-[35px] pb-[50px] lg:pb-0 pt-[50px] md:pt-[100px]">
         <hr className="w-full border-t border-text-muted/30" />
         <ScrollDownLink
           to={MARKETLOG_NEXT_PROJECT.href}
-          className="flex items-center justify-end lg:justify-start group"
+          className="flex items-center justify-end group"
         >
-          <span className="font-medium text-[36px] leading-normal tracking-[-1.97px] text-text-primary group-hover:opacity-70 transition-opacity">
+          <span className="font-medium text-[24px] md:text-[36px] leading-normal tracking-[-1.97px] text-text-primary group-hover:opacity-70 transition-opacity">
             {MARKETLOG_NEXT_PROJECT.label}
           </span>
           <svg

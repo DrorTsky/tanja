@@ -12,19 +12,31 @@ import {
   KILLBILLS_NEXT_STEPS,
   KILLBILLS_NEXT_PROJECT,
 } from "../constants";
-import killbillsPhone from "../assets/killbills-phone.png";
-import killbillsUser from "../assets/killbills-user.png";
-import killbillsPainpoints from "../assets/killbills-painpoints.png";
-import killbillsWireframes from "../assets/killbills-wireframes.png";
-import killbillsWireframe2 from "../assets/killbills-wireframe-2.png";
-import killbillsScreen1 from "../assets/killbills-screen-1.png";
-import killbillsScreen2 from "../assets/killbills-screen-2.png";
-import killbillsScreen3 from "../assets/killbills-screen-3.png";
-import killbillsScreen4 from "../assets/killbills-screen-4.png";
-import killbillsBottom from "../assets/killbills-bottom.png";
+
+import dKillbills1 from "../assets/portfolio/Killbills/d-killbills-1.png";
+import dKillbills2 from "../assets/portfolio/Killbills/d-killbills-2.png";
+import dKillbills3 from "../assets/portfolio/Killbills/d-killbills-3.png";
+import dKillbills4 from "../assets/portfolio/Killbills/d-killbills-4.png";
+import dKillbills5 from "../assets/portfolio/Killbills/d-killbills-5.png";
+import dKillbills6 from "../assets/portfolio/Killbills/d-killbills-6.png";
+import dKillbills7 from "../assets/portfolio/Killbills/d-killbills-7.png";
+import tKillbills1 from "../assets/portfolio/Killbills/t-killbills-1.png";
+import tKillbills2 from "../assets/portfolio/Killbills/t-killbills-2.png";
+import tKillbills3 from "../assets/portfolio/Killbills/t-killbills-3.png";
+import tKillbills4 from "../assets/portfolio/Killbills/t-killbills-4.png";
+import tKillbills5 from "../assets/portfolio/Killbills/t-killbills-5.png";
+import tKillbills6 from "../assets/portfolio/Killbills/t-killbills-6.png";
+import tKillbills7 from "../assets/portfolio/Killbills/t-killbills-7.png";
+import mKillbills1 from "../assets/portfolio/Killbills/m-killbills-1.png";
+import mKillbills2 from "../assets/portfolio/Killbills/m-killbills-2.png";
+import mKillbills3 from "../assets/portfolio/Killbills/m-killbills-3.png";
+import mKillbills4 from "../assets/portfolio/Killbills/m-killbills-4.png";
+import mKillbills5 from "../assets/portfolio/Killbills/m-killbills-5.png";
+import mKillbills6 from "../assets/portfolio/Killbills/m-killbills-6.png";
+import mKillbills7 from "../assets/portfolio/Killbills/m-killbills-7.png";
 
 const SECTION_HEADING_CLASS =
-  "font-medium text-[24px] lg:text-[36px] leading-normal tracking-[-1.97px] text-text-primary";
+  "font-medium text-[24px] md:text-[36px] leading-normal tracking-[-1.97px] text-text-primary";
 const BODY_TEXT_CLASS =
   "font-normal text-[15px] leading-[20px] text-text-primary";
 const TITLE = "KillBills";
@@ -39,24 +51,42 @@ const IMPACT_HEADING = "Impact";
 const LEARNED_HEADING = "What I learned";
 const NEXT_STEPS_HEADING = "Next steps";
 
+interface ResponsiveImageProps {
+  desktop: string;
+  tablet: string;
+  mobile: string;
+  alt: string;
+  className?: string;
+}
+
+function ResponsiveImage({ desktop, tablet, mobile, alt, className = "" }: ResponsiveImageProps) {
+  return (
+    <picture>
+      <source media="(min-width: 1024px)" srcSet={desktop} />
+      <source media="(min-width: 768px)" srcSet={tablet} />
+      <img src={mobile} alt={alt} className={`w-full h-auto ${className}`} />
+    </picture>
+  );
+}
+
 export default function KillBillsPage() {
   return (
-    <div className="flex flex-col w-full max-w-[997px] px-[var(--grid-padding)] lg:px-0 lg:pr-[var(--grid-padding)]">
+    <div className="flex flex-col w-full max-w-[997px] lg:max-w-none px-[var(--grid-padding)] lg:px-0 lg:pr-[var(--grid-padding)]">
       {/* Title */}
-      <div className="flex flex-col py-[50px] lg:gap-[10px] text-text-primary">
-        <h1 className="font-medium text-[32px] lg:text-[64px] leading-normal lg:leading-[68px] tracking-[-1.974px]">
+      <div className="flex flex-col gap-0 md:gap-[10px] py-[50px] text-text-primary">
+        <h1 className="font-medium text-[32px] md:text-[64px] leading-normal md:leading-[68px] tracking-[-1.974px]">
           {TITLE}
         </h1>
-        <p className="text-[12px] lg:text-[15px] font-normal leading-[20px]">
+        <p className="text-[12px] md:text-[15px] font-normal leading-[20px]">
           {SUBTITLE}
         </p>
       </div>
 
       {/* Content sections */}
-      <div className="flex flex-col gap-[50px] lg:gap-[100px] items-center">
-        {/* Product/Problem/Solution + Phone: side-by-side on desktop */}
-        <div className="flex flex-col lg:flex-row lg:gap-[var(--grid-gutter)] lg:items-center w-full">
-          <div className="flex flex-col gap-5 w-full lg:w-[489px] lg:shrink-0 text-text-primary">
+      <div className="flex flex-col gap-[50px] md:gap-[100px] items-center">
+        {/* Product/Problem/Solution + Phone */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--grid-gutter)] w-full">
+          <div className="flex flex-col gap-5 text-text-primary">
             <h2 className={SECTION_HEADING_CLASS}>{PRODUCT_HEADING}</h2>
             <p className={BODY_TEXT_CLASS}>{KILLBILLS_PRODUCT_TEXT}</p>
             <h2 className={SECTION_HEADING_CLASS}>{PROBLEM_HEADING}</h2>
@@ -68,124 +98,86 @@ export default function KillBillsPage() {
             <p className={BODY_TEXT_CLASS}>{KILLBILLS_SOLUTION_TEXT}</p>
           </div>
 
-          <div className="flex justify-center w-full lg:w-[488px] lg:shrink-0 mt-[50px] lg:mt-0">
-            <div className="w-[150px] h-[306px] md:w-[220px] md:h-[449px] lg:w-[287px] lg:h-[586px] relative overflow-hidden">
-              <img
-                src={killbillsPhone}
-                alt="KillBills app mockup"
-                className="themed-img absolute h-[111.59%] left-[-11.94%] top-[-5.8%] w-[123.13%] max-w-none"
-              />
-            </div>
+          <div className="flex justify-center items-start">
+            <ResponsiveImage
+              desktop={dKillbills1}
+              tablet={tKillbills1}
+              mobile={mKillbills1}
+              alt="KillBills app mockup"
+              className="themed-img w-auto max-h-[307px] md:max-h-[454px] lg:max-h-[586px]"
+            />
           </div>
         </div>
 
         {/* Understanding the user */}
-        <div className="flex flex-col gap-[20px] lg:gap-[var(--grid-gutter)] items-center w-full">
-          <div className="flex flex-col gap-5 w-full text-text-primary">
-            <h2 className={SECTION_HEADING_CLASS}>{USER_HEADING}</h2>
-            <p className={BODY_TEXT_CLASS}>{KILLBILLS_USER_TEXT}</p>
-          </div>
-          <div className="w-[345px] md:w-full h-[244px] md:h-[400px] lg:h-[705px] relative overflow-hidden">
-            <img
-              src={killbillsUser}
-              alt="User persona - Chen"
-              className="themed-img absolute inset-0 w-full h-full object-cover"
-            />
-          </div>
+        <div className="flex flex-col gap-5 w-full">
+          <h2 className={SECTION_HEADING_CLASS}>{USER_HEADING}</h2>
+          <p className={BODY_TEXT_CLASS}>{KILLBILLS_USER_TEXT}</p>
+          <ResponsiveImage
+            desktop={dKillbills2}
+            tablet={tKillbills2}
+            mobile={mKillbills2}
+            alt="User persona - Chen"
+            className="themed-img"
+          />
         </div>
 
         {/* Painpoints */}
         <div className="flex flex-col gap-5 w-full">
           <h2 className={SECTION_HEADING_CLASS}>{PAINPOINTS_HEADING}</h2>
-          <div className="w-full aspect-[997/446] relative overflow-hidden">
-            <img
-              src={killbillsPainpoints}
-              alt="User painpoints analysis"
-              className="themed-img absolute h-[102.66%] left-[-20.69%] top-0 w-[141.25%] max-w-none"
-            />
-          </div>
+          <ResponsiveImage
+            desktop={dKillbills3}
+            tablet={tKillbills3}
+            mobile={mKillbills3}
+            alt="User painpoints analysis"
+            className="themed-img"
+          />
         </div>
 
-        {/* Wireframes: side-by-side on desktop */}
-        <div className="flex flex-col lg:flex-row lg:gap-[var(--grid-gutter)] gap-5 items-center w-full">
-          <div className="flex flex-col gap-5 w-full lg:w-[484px] lg:shrink-0 text-text-primary">
+        {/* Wireframes: side-by-side on desktop, stacked on tablet/mobile */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--grid-gutter)] items-center w-full">
+          <div className="flex flex-col gap-5 text-text-primary">
             <h2 className="font-medium text-[36px] leading-normal tracking-[-1.97px] text-text-primary">
               {WIREFRAMES_HEADING}
             </h2>
             <p className={BODY_TEXT_CLASS}>{KILLBILLS_WIREFRAMES_TEXT}</p>
           </div>
-          <div className="w-[345px] md:w-full h-[308px] md:h-[400px] lg:w-[489px] lg:h-[436px] lg:shrink-0 relative">
-            <img
-              src={killbillsWireframes}
+          <div className="w-full">
+            <ResponsiveImage
+              desktop={dKillbills4}
+              tablet={tKillbills4}
+              mobile={mKillbills4}
               alt="KillBills wireframes"
-              className="themed-img absolute inset-0 w-full h-full object-cover"
+              className="themed-img"
             />
           </div>
         </div>
 
-        {/* Wireframe screenshot 2 */}
-        <div className="w-[345px] md:w-full h-[194px] md:h-[400px] lg:w-[993px] lg:h-[559px] relative">
-          <img
-            src={killbillsWireframe2}
-            alt="KillBills wireframe detail"
-            className="themed-img absolute inset-0 w-full h-full object-cover"
+        {/* App design system / style guide */}
+        <div className="w-full">
+          <ResponsiveImage
+            desktop={dKillbills5}
+            tablet={tKillbills5}
+            mobile={mKillbills5}
+            alt="KillBills design system"
+            className="themed-img"
           />
         </div>
 
-        {/* Phone screens: 2 rows of 2 on mobile, single row of 4 on desktop */}
-        <div className="hidden lg:flex items-start justify-between w-full">
-          {map(
-            [killbillsScreen3, killbillsScreen4, killbillsScreen1, killbillsScreen2],
-            (src, index) => (
-              <div key={index} className="w-[230px] h-[468px] relative overflow-hidden">
-                <img
-                  src={src}
-                  alt="KillBills app screen"
-                  className="themed-img absolute h-[111.54%] left-[-11.74%] top-[-5.77%] w-[122.57%] max-w-none"
-                />
-              </div>
-            ),
-          )}
+        {/* Phone mockups - single pre-composed image */}
+        <div className="w-full">
+          <ResponsiveImage
+            desktop={dKillbills6}
+            tablet={tKillbills6}
+            mobile={mKillbills6}
+            alt="KillBills app screens"
+            className="themed-img"
+          />
         </div>
 
-        <div className="flex lg:hidden flex-col gap-[50px] w-full">
-          <div className="flex items-start justify-between w-full">
-            <div className="w-[150px] md:w-[45%] h-[305px] md:h-[400px] relative overflow-hidden">
-              <img
-                src={killbillsScreen1}
-                alt="KillBills app screen"
-                className="themed-img absolute h-[111.54%] left-[-11.74%] top-[-5.77%] w-[122.57%] max-w-none"
-              />
-            </div>
-            <div className="w-[150px] md:w-[45%] h-[305px] md:h-[400px] relative overflow-hidden">
-              <img
-                src={killbillsScreen2}
-                alt="KillBills app screen"
-                className="themed-img absolute h-[111.54%] left-[-11.74%] top-[-5.77%] w-[122.57%] max-w-none"
-              />
-            </div>
-          </div>
-          <div className="flex items-start justify-between w-full">
-            <div className="w-[150px] md:w-[45%] h-[305px] md:h-[400px] relative overflow-hidden">
-              <img
-                src={killbillsScreen3}
-                alt="KillBills app screen"
-                className="themed-img absolute h-[111.54%] left-[-11.74%] top-[-5.77%] w-[122.57%] max-w-none"
-              />
-            </div>
-            <div className="w-[150px] md:w-[45%] h-[305px] md:h-[400px] relative overflow-hidden">
-              <img
-                src={killbillsScreen4}
-                alt="KillBills app screen"
-                className="themed-img absolute h-[111.54%] left-[-11.74%] top-[-5.77%] w-[122.59%] max-w-none"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Impact/Learned/Next steps + Bottom image: side-by-side on desktop */}
-        <div className="flex flex-col lg:flex-row lg:gap-[var(--grid-gutter)] lg:items-center w-full">
-          <div className="flex flex-col gap-5 w-full lg:w-[489px] lg:shrink-0 text-text-primary">
+        {/* Impact/Learned/Next steps + illustration */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--grid-gutter)] items-center w-full">
+          <div className="flex flex-col gap-5 text-text-primary">
             <h2 className={SECTION_HEADING_CLASS}>{IMPACT_HEADING}</h2>
             <p className={BODY_TEXT_CLASS}>{KILLBILLS_IMPACT_TEXT}</p>
             <h2 className={SECTION_HEADING_CLASS}>{LEARNED_HEADING}</h2>
@@ -200,26 +192,26 @@ export default function KillBillsPage() {
             </div>
           </div>
 
-          <div className="flex justify-center w-full lg:w-[488px] lg:shrink-0 mt-[50px] lg:mt-0">
-            <div className="w-[345px] md:w-full h-[258px] md:h-[350px] lg:w-[488px] lg:h-[365px] relative">
-              <img
-                src={killbillsBottom}
-                alt="KillBills final design"
-                className="themed-img absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
+          <div className="flex justify-center">
+            <ResponsiveImage
+              desktop={dKillbills7}
+              tablet={tKillbills7}
+              mobile={mKillbills7}
+              alt="KillBills character illustration"
+              className="themed-img"
+            />
           </div>
         </div>
       </div>
 
       {/* Divider + Next Project */}
-      <div className="flex flex-col gap-[35px] pb-[50px] lg:pb-0 pt-[50px] lg:pt-[100px]">
+      <div className="flex flex-col gap-[35px] pb-[50px] lg:pb-0 pt-[50px] md:pt-[100px]">
         <hr className="w-full border-t border-text-muted/30" />
         <ScrollDownLink
           to={KILLBILLS_NEXT_PROJECT.href}
-          className="flex items-center justify-end lg:justify-start group"
+          className="flex items-center justify-end group"
         >
-          <span className="font-medium text-[36px] leading-normal tracking-[-1.97px] text-text-primary group-hover:opacity-70 transition-opacity">
+          <span className="font-medium text-[24px] md:text-[36px] leading-normal tracking-[-1.97px] text-text-primary group-hover:opacity-70 transition-opacity">
             {KILLBILLS_NEXT_PROJECT.label}
           </span>
           <svg
