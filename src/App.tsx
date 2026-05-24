@@ -13,6 +13,7 @@ import KillBillsPage from "./components/KillBillsPage";
 import IchiPage from "./components/IchiPage";
 import MyfxbookPage from "./components/MyfxbookPage";
 import ScrollToTop from "./components/ScrollToTop";
+import usePageTracking from "./hooks/usePageTracking";
 
 function HomePage() {
   return (
@@ -46,6 +47,7 @@ export default function App() {
   );
   const closeMobileMenu = useCallback(() => setIsMobileMenuOpen(false), []);
   const { pathname } = useLocation();
+  usePageTracking();
 
   useEffect(() => {
     closeMobileMenu();

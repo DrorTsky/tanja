@@ -1,3 +1,5 @@
+export const GA_MEASUREMENT_ID = "G-67FYRJPDTL";
+
 export const SITE_TITLE = "Tanya Sherbakov | Portfolio";
 
 export const LG_BREAKPOINT = 1024;
