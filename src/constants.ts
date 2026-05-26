@@ -301,6 +301,6 @@ export const CONTACT_LINKS = [
   },
   {
     label: "Resume",
-    href: "https://drive.google.com/uc?export=download&id=1nkVWILH9SUp5K1qz5wnjWl3d164RDnIt",
+    href: "https://drive.google.com/uc?export=download&id=1LTutY6AF08X_e6pFue51RK7vFHm2hn4K",
   },
 ] as const;
